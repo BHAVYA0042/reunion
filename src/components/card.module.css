@@ -1,0 +1,96 @@
+*{
+  margin:0;
+}
+.listing{
+  padding: 5% 8%;
+  display: flex;
+  flex-direction: column;
+}
+.searchBar{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+.searchBar div{
+  display: flex;
+  align-items: center;
+}
+.cardSection{
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.card{
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  position: relative;
+}
+.content{
+  padding: 4% 6% !important;
+}
+.first{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.first span{
+  display: flex;
+  align-items:center;
+}
+.first strong{
+  color: #8758FF;
+  font-weight: 700;
+  letter-spacing:  0.05em;
+  font-size: 25px;
+  margin-right: 5px;
+}
+.second{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+.second h3{
+  margin-bottom: 5px;
+}
+.second p{
+  opacity: 0.6;
+  font-weight: 500;
+}
+.third{
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.third section{
+  display: flex;
+  justify-content: baseline;
+  align-items: center;
+  color: #2e3236a9;
+  font-weight: 500;
+  font-size: 14px;
+  /* color: rgba(255, 255, 255, 0.322); */
+}
+.third span{
+  margin-left: 3px;
+}
+.tag{
+  background-color: #8758FF;
+  padding: 5px 10px 5px 0;
+  font-size: 13px;
+  color: white;
+  position: absolute;
+  z-index: 2;
+  border-radius: 0 5px 5px 0;
+  top:160px;
+}
+
+@media screen and (max-width:589px) {
+  .searchBar{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+}

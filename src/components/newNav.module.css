@@ -1,0 +1,79 @@
+.links{
+  padding: 8px 6px;
+}
+.nav{
+  color: black !important;
+}
+/* .toolbar{
+  justify-content: space-between;
+} */
+.optionBox{
+  justify-content: space-evenly !important;
+  flex-grow: 0.5;
+}
+.optionBox a{
+  text-decoration: none;
+  font-size: 18px;
+  color:black;
+  /* margin: 0 5px; */
+  font-weight: 400;
+  padding: 5px 10px;
+}
+.logos{
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+}
+.loginButton{
+  color: #8758FF;
+  background-color: white;
+  border: solid 1px #8758FF;
+  border-radius: 5px;
+  font-size: 15px;
+  padding: 10px 20px;
+  margin-right: 15px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.signupButton{
+  background-color: #8758FF;
+  color:white;
+  border: solid 1px #8758FF;
+  border-radius: 5px;
+  font-size: 15px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.optionBox a.active{
+  color:#8758FF;
+  background-color: #8758ff29;
+  /* text-decoration: none; */
+  /* font-weight: 600; */
+
+}
+.activeMobile{
+  color:black;
+  text-decoration: none;
+  display: block;
+}
+.inactiveMobile{
+  color:black;
+  text-decoration: none;
+  display: block;
+}
+a.inactive{
+  text-decoration: none;
+  margin:0 15px;
+  display: block;
+  font-family: "Roboto","Helvetica","Arial",sans-serif;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1.75;
+  letter-spacing: 0.02857em;
+
+  min-width: 50px;
+  padding: 22px 8px;
+  text-align: center;
+}
