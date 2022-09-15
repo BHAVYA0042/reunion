@@ -1,17 +1,13 @@
 import Listing from "./components/listing";
-import ResponsiveAppBar from "./components/navbar";
+
+import ResponsiveAppBarr from "./components/newNavbar";
 
 function App() {
 
   return (
     <div className="App">
-      <ResponsiveAppBar />
+      <ResponsiveAppBarr />
       <Listing />
-
-
- 
-
-      
     </div>
   );
 }

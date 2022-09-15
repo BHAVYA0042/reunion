@@ -22,6 +22,7 @@ const SearchSec = (props) => {
   function removeSearchHandler(e){
     e.preventDefault();
     dispatch(housing_action.removeSearch());
+    setSearchValue(null)
   }
   return (
     <div className={classes.searchBar}>

@@ -5,42 +5,37 @@ import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
+import {MenuOutlined} from '@mui/icons-material';
 import Container from '@mui/material/Container';
-import Home from '@mui/icons-material/Home';
+import MenuItem from '@mui/material/MenuItem';
+import {NavLink} from "react-router-dom"
 import classes from "./newNav.module.css";
-import {NavLink} from  "react-router-dom";
+import Home from '@mui/icons-material/Home';
+
 
 const pages = ['Rent', 'Buy', 'Sell','ManageProperty','Resources'];
-// const OptionPages=['Manage Property','Resources']
-// const settings=['Option 1','Option 2']
 
 
-const ResponsiveAppBar = () => {
+const ResponsiveAppBarr = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  // const [anchorElUser, setAnchorElUser] = React.useState(null);
+
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-  // const handleOpenUserMenu = (event) => {
-  //   setAnchorElUser(event.currentTarget);
-  // };
+
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
 
-  // const handleCloseUserMenu = () => {
-  //   setAnchorElUser(null);
-  // };
+
 
   return (
-    <AppBar position="static" className={classes.nav} sx={{backgroundColor:"white"}}>
-      <Container maxWidth="xl">
-        <Toolbar disableGutters className={classes.toolbar}>
-          <div className={classes.logos}>
-          <Home sx={{color:"#8758FF",position:"relative",bottom:"1px"}}/>
+    <AppBar position="static" sx={{backgroundColor:"white"}}>
+      <Container maxWidth="xl" >
+        <Toolbar disableGutters >
+        <Home sx={{color:"#8758FF",position:"relative",bottom:"1px"}}/>
           <Typography
             variant="h6"
             noWrap
@@ -52,16 +47,14 @@ const ResponsiveAppBar = () => {
               fontFamily: 'monospace',
               fontWeight: 700,
               letterSpacing: '.3rem',
-              color: 'inherit',
+              color: 'black',
               textDecoration: 'none',
             }}
           >
             Estatery
           </Typography>
 
-          </div>
-          
-          <Box  sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -70,7 +63,7 @@ const ResponsiveAppBar = () => {
               onClick={handleOpenNavMenu}
               color="inherit"
             >
-              <MenuIcon />
+              <MenuOutlined />
             </IconButton>
             <Menu
               id="menu-appbar"
@@ -90,15 +83,18 @@ const ResponsiveAppBar = () => {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-               {pages.map((page) => (
-            <NavLink className={(nav)=>nav.isActive ? classes.active : classes.inactive }
-            to={`/${page}`}>
+              {pages.map((page) => (
+                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                <NavLink className={(nav)=>nav.isActive ? classes.activeMobile : classes.inactiveMobile} 
+                to={`/${page}`}>
               {page}
             </NavLink>
+                </MenuItem>
               ))}
             </Menu>
           </Box>
 
+          {/* <Home sx={{color:"#8758FF",position:"relative",bottom:"1px"}}/> */}
           <Typography
             variant="h5"
             noWrap
@@ -111,21 +107,23 @@ const ResponsiveAppBar = () => {
               fontFamily: 'monospace',
               fontWeight: 700,
               letterSpacing: '.3rem',
-              color: 'inhet',
+              color: 'black',
               textDecoration: 'none',
+              paddingRight:"80px"
             }}
           >
             Estatery
           </Typography>
-
-          <Box className= {classes.optionBox} sx={{ display: { xs: 'none', sm: 'flex' },color:"black" }}>
-          {pages.map((page) => (
-            <NavLink className={(nav)=>nav.isActive ? classes.active :""} to={`/${page}`}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent:{ xs:'none', md: 'flex-start'}, paddingRight:"80px" }}>
+            {pages.map((page) => (             
+            <NavLink className={(nav)=>nav.isActive ? classes.active : classes.inactive} to={`/${page}`}>
               {page}
             </NavLink>
-              ))}
+              
+            ))}
           </Box>
-          <Box sx={{marginRight:"0",marginLeft:"auto"}}>
+
+          <Box sx={{ flexGrow: 0}} className={classes.buttonBox}>
           <button className={classes.loginButton}>Login</button>
           <button className={classes.signupButton}>Sign up</button>
           </Box>
@@ -134,4 +132,5 @@ const ResponsiveAppBar = () => {
     </AppBar>
   );
 };
-export default ResponsiveAppBar;
+export default ResponsiveAppBarr;
+
